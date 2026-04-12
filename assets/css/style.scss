@@ -1,0 +1,167 @@
+---
+---
+
+:root {
+  --bg: #f4efe2;
+  --paper: rgba(255, 251, 241, 0.9);
+  --ink: #201913;
+  --muted: #6d5a4c;
+  --accent: #8b3327;
+  --line: rgba(32, 25, 19, 0.12);
+  --shadow: 0 24px 70px rgba(35, 24, 18, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background:
+    radial-gradient(circle at top, rgba(201, 126, 72, 0.2), transparent 34%),
+    linear-gradient(180deg, #ede3d0 0%, #f6efe4 100%);
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+}
+
+.page-shell {
+  width: min(940px, calc(100% - 2rem));
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.site-header,
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-title {
+  max-width: 36rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: clamp(1.15rem, 2vw, 1.7rem);
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+.site-main {
+  padding: 2rem 0;
+}
+
+.hero,
+.post,
+.not-found {
+  max-width: 44rem;
+}
+
+.eyebrow,
+.post-date,
+.site-footer,
+.section-heading p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.post h1,
+.not-found h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.5rem, 6vw, 4.4rem);
+  line-height: 0.95;
+}
+
+.intro,
+.post-content p {
+  font-size: 1.15rem;
+}
+
+.posts {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.post-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.post-card {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.post-card h3,
+.post-header h1,
+.post-card p:first-child {
+  margin-top: 0;
+}
+
+.post-card p:last-child,
+.post-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.site-footer {
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: calc(100% - 1rem);
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .site-header,
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-main {
+    padding: 1.5rem 0;
+  }
+
+  .intro,
+  .post-content p {
+    font-size: 1.05rem;
+  }
+}

@@ -1,15 +1,58 @@
 # Lovers, Beekeepers, Epilepsy, Fainting, and the Plague
-This website has virtually nothing to do with Saint Rhian, the Welsh abbot who is "virtually unknown save for giving his name to Llanrhian, Dyfed, Wales," according to catholiconline.org 
 
-Instead, this is where I'm going to write every day. It could be about anything, and very it likely won't amount to much of anything. It might not be read by anyone other than myself. I think that's ok, and I still thank you for reading. 
+This repository is structured as a Jekyll site for GitHub Pages.
 
--- SR
+## Site structure
 
-### 16 Mar 2026 
-I got rejected form an internship today, and it was given instead to somebody who currently works for me. Actually, I got the rejection email four days ago in my junk inbox, and forgot to check. So today I just embarrassed myself by emailing to follow-up with an employer that had already rejected me. But between the time I sent that email and the time I got the polite, humiliating response from Outreach Astronomer Mallory, I went to class and found out in-person that my employee had been chosen for the internship instead of myself. God it was just so unbearable. This classmate is truly smart and talented, and I have nothing against her. I'm happy that she'll get the chance to work their. But I am so frustrated with myself. I knew that my chances of getting this job were slim, but I was actually dumb enough and bad enough at managing my time that I did not apply to a single other internship. I just hail mary'd one application and half-filled the rest before giving up on them and thinking that somehow that plan would work out. Jesus fucking christ.
+- `_config.yml`: GitHub Pages / Jekyll configuration
+- `_layouts/`: shared page and post templates
+- `assets/css/style.scss`: global styling
+- `_posts/`: dated journal entries
+- `index.html`: homepage and post list
+- `about.md`: static about page
 
-I think I need to change how I'm doing life in at leasat some major way. There's a lot more detail I could go into about how dumb I was with these applicaitons and how much time I've wasted every day and all the horrible delusions I must have had from previous experiences where my poor planning has worked out just fine. I don't think that I will get into it right now. I'm just going to try to make some small changes day by day. This was my New Year's Resolution but I guess now it's my Saint Patrick's Resolution: I am going to write every day. It could be journaling, it could be informational, it could be anything. But I just won't skip a day, ever. And all of it will go here, where it's "published," and where someone else could see it if they wanted to. Though I doubt they will. 
+## Publishing with GitHub Pages
 
-Just had a shower and wallowed a bit, feeling down but not down for the count. I will have a lot to say in the next few days, I think. 
+This repo includes a GitHub Actions workflow at `.github/workflows/pages.yml` that builds
+the Jekyll site and deploys it to GitHub Pages on every push to `main`.
 
--- SR
+To enable it in GitHub:
+
+1. Open `Settings`.
+2. Open `Pages`.
+3. Under `Build and deployment`, choose `GitHub Actions`.
+
+The site will publish at `https://saintrhian.github.io`.
+
+## Local development
+
+Install the Jekyll dependencies:
+
+```bash
+bundle install
+```
+
+Then run the local server:
+
+```bash
+bundle exec jekyll serve
+```
+
+## Adding new entries
+
+Create new Markdown files in `_posts/` using this filename format:
+
+```text
+YYYY-MM-DD-title.md
+```
+
+Each post should start with front matter like this:
+
+```yaml
+---
+title: New Entry
+date: 2026-04-11 09:00:00 -0500
+---
+```
+
+Then write the body in Markdown.
